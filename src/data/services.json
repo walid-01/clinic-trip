@@ -1,0 +1,100 @@
+{
+  "dental-care": {
+    "serviceTypes": [
+      {
+        "typeName": "Dental Implants",
+        "image": "/images/services/dental-implants.jpg",
+        "subtitle": "A permanent solution for missing teeth.",
+        "sections": [
+          {
+            "sectionName": "What are Dental Implants?",
+            "content": [
+              {
+                "title": "Introduction",
+                "paragraph": "Dental implants are a long-term solution to replace missing teeth."
+              },
+              {
+                "title": "Procedure",
+                "paragraph": "The implant involves placing a titanium post into the jawbone."
+              }
+            ]
+          },
+          {
+            "sectionName": "Benefits of Dental Implants",
+            "content": [
+              {
+                "title": "Durability",
+                "paragraph": "Dental implants can last a lifetime with proper care."
+              },
+              {
+                "title": "Natural Appearance",
+                "paragraph": "They provide a natural look and function like real teeth."
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "question": "How long do dental implants last?",
+            "answer": "With proper care, dental implants can last a lifetime."
+          },
+          {
+            "question": "Is the implant procedure painful?",
+            "answer": "The procedure is done under local anesthesia, and discomfort is minimal."
+          }
+        ]
+      },
+      {
+        "typeName": "Zirconium Implants",
+        "image": "/images/services/zirconium-implants.jpg",
+        "subtitle": "A metal-free alternative to traditional implants.",
+        "sections": [
+          {
+            "sectionName": "Why Zirconium?",
+            "content": [
+              {
+                "title": "Introduction to Zirconium",
+                "paragraph": "Zirconium implants are ideal for patients with metal allergies."
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "question": "Are Zirconium Implants safe?",
+            "answer": "Yes, they are biocompatible and hypoallergenic."
+          }
+        ]
+      }
+    ]
+  },
+  "botox": {
+    "serviceName": "Botox Treatment",
+    "image": "/images/services/botox.jpg",
+    "subtitle": "Non-invasive treatment for reducing wrinkles.",
+    "serviceTypes": [
+      {
+        "typeName": "Botox Injections",
+        "image": "/images/services/botox-injections.jpg",
+        "subtitle": "A safe and effective way to reduce fine lines.",
+        "sections": [
+          {
+            "sectionName": "Botox Procedure",
+            "content": [
+              {
+                "title": "How it works",
+                "paragraph": "Botox temporarily relaxes muscles to smooth out wrinkles."
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "question": "How long does Botox last?",
+            "answer": "Botox effects last 3 to 4 months on average."
+          }
+        ]
+      }
+    ]
+  }
+}

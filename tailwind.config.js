@@ -7,11 +7,31 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        catcheye: ["CatchEye", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#1F006A",
+          secondary: "#000",
+          accent: "#7967A6",
+          neutral: "#f3f4f6",
+          "base-100": "#ffffff",
+          info: "#f6fafd",
+          success: "#15803d",
+          warning: "#fbbf24",
+          error: "#b91c1c",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };
