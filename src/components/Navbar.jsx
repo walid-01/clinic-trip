@@ -1,91 +1,145 @@
 import Link from "next/link";
 import Image from "next/image";
-import logoIcon from "../../public/assets/Logo.svg";
+import logoIcon from "../../public/assets/Logo_2.svg";
+import { createClient } from "contentful";
 
-const Navbar = () => {
+const Navbar = async () => {
+  // Fetch service groups and include referenced services in one query
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({
+    content_type: "serviceGroup",
+    include: 2, // Include up to 2 levels of linked entries (e.g., services linked via category)
+  });
+
+  const serviceGroups = res.items;
+
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <Link href="" className="btn btn-ghost text-xl h-fit p-2 flex flex-row">
-          <div className="w-12">
-            <Image priority src={logoIcon} alt="logo" />
+    <div className="drawer drawer-end z-50">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        {/* Navbar */}
+        <div className="navbar bg-base-100">
+          <div className="navbar-start">
+            <Link href="/" className="w-44 p-2">
+              <Image priority src={logoIcon} alt="logo" />
+            </Link>
           </div>
-          <p className="font-catcheye text-3xl">Clinic Trip</p>
-        </Link>
-      </div>
 
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link href="">Item 1</Link>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <Link href="">Submenu 1</Link>
-                </li>
-                <li>
-                  <Link href="">Submenu 2</Link>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <Link href="">Item 3</Link>
-          </li>
-        </ul>
-      </div>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
+              {serviceGroups.map((group) => (
+                <li key={group.sys.id} className="relative group">
+                  {/* Group name */}
+                  <div className="group-name cursor-pointer">
+                    {group.fields.groupName}
+                  </div>
 
-      <div className="navbar-end">
-        {/* Hamburger menu for small screens */}
-        <div className="dropdown dropdown-end lg:hidden">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost w-12 h-12 p-1"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-                fill="#000000"
-              />
-            </svg>
+                  {/* Services list (hidden by default, shown on hover) */}
+                  <ul className="absolute left-0 top-full hidden group-hover:grid bg-white grid-cols-3 gap-x-1 p-4 shadow-lg z-50 w-[80vh] transform -translate-x-1/2">
+                    {group.fields.services.map((service) => (
+                      <li key={service.sys.id}>
+                        <Link
+                          href={`/services/${service.fields.slug}`}
+                          className="block p-2"
+                        >
+                          {service.fields.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            <li>
-              <Link href="">Item 1</Link>
-            </li>
-            <li>
-              <Link href="">Parent</Link>
-              <ul className="p-2">
-                <li>
-                  <Link href="">Submenu 1</Link>
-                </li>
-                <li>
-                  <Link href="">Submenu 2</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href="">Item 3</Link>
-            </li>
-          </ul>
+
+          <div className="navbar-end">
+            {/* Hamburger menu for small screens */}
+            <div className="flex-none lg:hidden">
+              <label
+                htmlFor="my-drawer-3"
+                aria-label="open sidebar"
+                className="btn btn-square btn-ghost"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block h-6 w-6 stroke-current"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
         </div>
+        {/* Page content here */}
+      </div>
 
-        {/* <Link href="" className="btn">
-          Button
-        </Link> */}
+      {/* Sidebar drawer */}
+      <div className="drawer-side">
+        <label
+          htmlFor="my-drawer-3"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <ul className="menu min-h-full w-80 p-4 bg-white">
+          {/* Close button inside the drawer */}
+          <div className="flex justify-end">
+            <li className="drawer-close mb-2">
+              <label
+                htmlFor="my-drawer-3"
+                aria-label="close sidebar"
+                className="btn btn-square btn-ghost"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block h-6 w-6 stroke-current"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </label>
+            </li>
+          </div>
+
+          {/* List of service groups and services for the sidebar */}
+          {serviceGroups.map((group) => (
+            <li key={group.sys.id} className="mb-2">
+              <details className="group">
+                <summary className="cursor-pointer py-2 font-bold">
+                  {group.fields.groupName}
+                </summary>
+                <ul className="pl-4">
+                  {group.fields.services.map((service) => (
+                    <li key={service.sys.id} className="py-1">
+                      <Link
+                        href={`/services/${service.fields.slug}`}
+                        className="text-sm text-gray-700 hover:underline"
+                      >
+                        {service.fields.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
