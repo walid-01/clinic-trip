@@ -1,3 +1,6 @@
+import FAQ from "@/components/faq";
+import Footer from "@/components/Footer";
+import MedicalTourism from "@/components/MedicalTourism";
 import OurTreatments from "@/components/OurTreatments";
 import WhyUs from "@/components/WhyUs";
 
@@ -16,6 +19,9 @@ export default function Home() {
       </div>
       <WhyUs />
       <OurTreatments />
+      <MedicalTourism />
+      <FAQ />
+      <Footer />
     </div>
   );
 }

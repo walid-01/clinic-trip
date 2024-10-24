@@ -24,7 +24,7 @@ const Navbar = async () => {
         {/* Navbar */}
         <div className="navbar bg-base-100">
           <div className="navbar-start">
-            <Link href="/" className="w-44 p-2">
+            <Link href="/" className="w-44 p-2 lg:w-64">
               <Image priority src={logoIcon} alt="logo" />
             </Link>
           </div>
