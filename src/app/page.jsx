@@ -1,4 +1,4 @@
-import FAQ from "@/components/faq";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import MedicalTourism from "@/components/MedicalTourism";
 import OurTreatments from "@/components/OurTreatments";
