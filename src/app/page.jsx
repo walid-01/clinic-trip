@@ -1,5 +1,4 @@
 import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
 import MedicalTourism from "@/components/MedicalTourism";
 import OurTreatments from "@/components/OurTreatments";
 import WhyUs from "@/components/WhyUs";
@@ -21,7 +20,6 @@ export default function Home() {
       <OurTreatments />
       <MedicalTourism />
       <FAQ />
-      <Footer />
     </div>
   );
 }

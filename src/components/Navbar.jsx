@@ -6,8 +6,8 @@ import { createClient } from "contentful";
 const Navbar = async () => {
   // Fetch service groups and include referenced services in one query
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
   });
 
   const res = await client.getEntries({
@@ -29,7 +29,7 @@ const Navbar = async () => {
             </Link>
           </div>
 
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden xl:flex">
             <ul className="menu menu-horizontal px-1">
               {serviceGroups.map((group) => (
                 <li key={group.sys.id} className="relative group">
@@ -43,22 +43,29 @@ const Navbar = async () => {
                     {group.fields.services.map((service) => (
                       <li key={service.sys.id}>
                         <Link
-                          href={`/services/${service.fields.slug}`}
+                          href={`/services/${group.fields.slug}/${
+                            service.fields?.slug || "#"
+                          }`}
                           className="block p-2"
                         >
-                          {service.fields.name}
+                          {service.fields?.name || "undefined"}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
               ))}
+              <li>
+                <Link href={"/about-us"} className="group-name cursor-pointer">
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div className="navbar-end">
             {/* Hamburger menu for small screens */}
-            <div className="flex-none lg:hidden">
+            <div className="flex-none xl:hidden">
               <label
                 htmlFor="my-drawer-3"
                 aria-label="open sidebar"
@@ -78,6 +85,16 @@ const Navbar = async () => {
                   ></path>
                 </svg>
               </label>
+            </div>
+
+            {/* Free consultation button for large screens */}
+            <div className="flex-none hidden xl:block">
+              <button
+                type="button"
+                className="btn btn-secondary rounded-none mr-3"
+              >
+                Free Consultation
+              </button>
             </div>
           </div>
         </div>
@@ -118,6 +135,9 @@ const Navbar = async () => {
           </div>
 
           {/* List of service groups and services for the sidebar */}
+          <button type="button" className="btn btn-secondary rounded-none mb-4">
+            Free Consultation
+          </button>
           {serviceGroups.map((group) => (
             <li key={group.sys.id} className="mb-2">
               <details className="group">
@@ -128,10 +148,12 @@ const Navbar = async () => {
                   {group.fields.services.map((service) => (
                     <li key={service.sys.id} className="py-1">
                       <Link
-                        href={`/services/${service.fields.slug}`}
+                        href={`/services/${group.fields.slug}/${
+                          service.fields?.slug || "#"
+                        }`}
                         className="text-sm text-gray-700 hover:underline"
                       >
-                        {service.fields.name}
+                        {service.fields?.name || "#"}
                       </Link>
                     </li>
                   ))}
@@ -139,6 +161,11 @@ const Navbar = async () => {
               </details>
             </li>
           ))}
+          <li>
+            <Link href={"/about-us"} className="group-name cursor-pointer">
+              About Us
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

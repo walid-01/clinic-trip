@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Footer = async () => {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
   });
 
   const res = await client.getEntries({
@@ -79,16 +79,16 @@ const Footer = async () => {
       </nav>
       <nav>
         <h6 className="footer-title">Company</h6>
-        <Link href="/about-us" className="link link-hover">
+        <Link href="#" className="link link-hover">
           About us
         </Link>
-        <Link href="/contact" className="link link-hover">
+        <Link href="#" className="link link-hover">
           Contact
         </Link>
-        <Link href="/gallery" className="link link-hover">
+        <Link href="#" className="link link-hover">
           Gallery
         </Link>
-        <Link href="/corporate" className="link link-hover">
+        <Link href="#" className="link link-hover">
           Corporate
         </Link>
       </nav>
