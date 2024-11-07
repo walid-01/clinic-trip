@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Dental Care",
+    "description": "Our dental care services aim to enhance both your oral health and confidence, offering comprehensive treatments such as cleanings, orthodontics, and restorative procedures.",
+    "slug": "dental-care"
+  },
+  {
+    "title": "Medical Cosmetics",
+    "description": "Our medical cosmetic services aim to enhance both your physical appearance and self-confidence, offering a range of treatments such as botox, fillers, and chemical peels.",
+    "slug": "medical-cosmetics"
+  },
+  {
+    "title": "Plastic Surgeries",
+    "description": "Our plastic surgery services aim to enhance both your physical appearance and self-confidence, offering a range of procedures such as breast augmentations, facelifts, and body contouring.",
+    "slug": "plastic-surgeries"
+  },
+  {
+    "title": "Hair Transplant",
+    "description": "Our hair transplant services aim to enhance both your physical appearance and self-confidence, offering a range of procedures such as follicular unit extraction and strip harvesting.",
+    "slug": "hair-transplant"
+  }
+]
