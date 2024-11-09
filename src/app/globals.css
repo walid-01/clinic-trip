@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+body {
+  @apply font-sans; /* Set Source Sans Pro as the default for body text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif; /* Apply Playfair Display only to headings */
+}
+
+
+
+/* @font-face {
   font-family: 'CatchEye';
   src: url('/fonts/Catchye.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}
+} */
+

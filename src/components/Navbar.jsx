@@ -35,11 +35,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="drawer drawer-end z-50">
+    <div className="drawer drawer-end z-50 absolute">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-white/30 backdrop-blur-sm px-20 py-4">
           <div className="navbar-start">
             <Link href="/" className="w-44 p-2 lg:w-64">
               <Image priority src={logoIcon} alt="logo" />
@@ -49,23 +49,26 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="flex items-center gap-8 px-1">
               <li>
-                <Link href={"/"} className="hover:text-primary">
+                <Link href={"/"} className="relative group font-semibold ">
                   HOME
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                 </Link>
               </li>
               {/* Treatments dropdown */}
               <li className="relative group">
-                <div className="cursor-pointer p-4">OPERATIONS</div>
+                <div className="cursor-pointer py-4 flex items-center font-semibold ">
+                  OPERATIONS
+                </div>
                 <ul className="absolute left-0 p-0 top-full hidden group-hover:flex active:bg-white focus:bg-white bg-white hover:bg-white shadow-lg z-50 w-auto max-h-[300px] h-[300px] hover:cursor-default">
                   {/* Categories list on the left */}
-                  <div className="w-40 h-full">
+                  <div className="w-56 h-full flex flex-col gap-[1px]">
                     {serviceGroups.map((group) => (
                       <li
                         key={group.sys.id}
                         className={`cursor-pointer h-1/4 flex text-base px-4 ${
                           selectedCategory === group.sys.id
-                            ? "text-primary"
-                            : "bg-gray-100"
+                            ? "font-semibold"
+                            : "bg-black/90 text-white"
                         }`}
                         onMouseEnter={() => setSelectedCategory(group.sys.id)}
                       >
@@ -73,7 +76,7 @@ const Navbar = () => {
                           className="hover:bg-transparent h-full w-full rounded-none flex items-center active:bg-white"
                           href={`/services/${group.fields.slug}`}
                         >
-                          {group.fields.groupName}
+                          {group.fields.groupName.toUpperCase()}
                         </Link>
                       </li>
                     ))}
@@ -85,7 +88,7 @@ const Navbar = () => {
                         href={`/services/${selectedGroup.fields.slug}/${
                           service.fields?.slug || "#"
                         }`}
-                        className="text-sm text-gray-700 flex items-center text-wrap px-4 h-full hover:bg-gray-50 border-b-2 border-transparent hover:border-b-2 hover:border-primary hover:text-primary"
+                        className="text-gray-700 flex items-center text-wrap px-4 h-full hover:bg-gray-50 border-b border-transparent hover:border-b hover:border-black"
                       >
                         {service.fields?.name || "Unnamed Service"}
                       </Link>
@@ -94,18 +97,30 @@ const Navbar = () => {
                 </ul>
               </li>
               <li>
-                <Link href={"/before-after"} className="hover:text-primary">
+                <Link
+                  href={"/before-after"}
+                  className="relative group font-semibold "
+                >
                   BEFORE / AFTER
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href={"/about-us"} className="hover:text-primary">
+                <Link
+                  href={"/about-us"}
+                  className="relative group font-semibold "
+                >
                   ABOUT US
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href={"/contact"} className="hover:text-primary">
+                <Link
+                  href={"/contact"}
+                  className="relative group font-semibold "
+                >
                   CONTACT
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                 </Link>
               </li>
             </ul>

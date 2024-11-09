@@ -12,20 +12,33 @@ const ServiceFAQ = ({ faqs }) => {
         {faqs && faqs.length > 0 ? (
           <Swiper
             slidesPerView={1}
-            spaceBetween={35}
+            spaceBetween={25}
             centeredSlides={true}
             pagination={{ clickable: true }}
             breakpoints={{
-              100: { slidesPerView: 1.5 },
-              640: { slidesPerView: 2.5 },
-              1440: { slidesPerView: 4.5 },
+              // Define breakpoints for responsive design
+              100: {
+                slidesPerView: 1.5,
+              },
+
+              768: {
+                slidesPerView: 2,
+              },
+
+              1024: {
+                slidesPerView: 3,
+              },
+
+              1440: {
+                slidesPerView: 4,
+              },
             }}
             className="cursor-grab"
           >
             {faqs.map((faq, index) => (
               <SwiperSlide key={index} className="flex flex-col mb-4">
-                <div className="bg-white rounded-lg shadow-lg p-4 md:px-8 md:py-10 text-center flex flex-col h-full">
-                  <h3 className="text-xl font-semibold mb-2">{faq.question}</h3>
+                <div className="bg-white border shadow-md border-gray-300 rounded-lg p-6 md:px-10 md:py-10 text-center flex flex-col h-[400px] sm:h-[350px] md:h-[390px] lg:h-[450px] xl:h-[350px]">
+                  <h3 className="text-xl font-semibold mb-6">{faq.question}</h3>
                   <p className="text-gray-700 flex-grow">{faq.answer}</p>
                 </div>
               </SwiperSlide>

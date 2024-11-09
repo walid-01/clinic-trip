@@ -41,16 +41,23 @@ const LandingCardsSlider = () => {
   return (
     <div
       {...swipeHandlers}
-      className="flex justify-center xl:justify-normal items-center h-[90vh] relative z-0"
+      className="flex justify-center xl:justify-normal items-center h-[100vh] relative z-0"
     >
       <img
         src="/assets/Clinic.jpg"
         className="w-full h-full object-cover absolute -z-10"
         alt="clinic"
       />
+      {/* Gradient Background */}
+      {/* <div
+        className="absolute w-full h-full -z-10"
+        style={{
+          background: "linear-gradient(to bottom right, #ede9fd, #f5f3ff)",
+        }}
+      ></div> */}
 
       {/* Slide Content */}
-      <div className="bg-white backdrop-blur-sm bg-opacity-50 mx-20 w-[85vw] p-5 py-20 xl:p-12 rounded-lg shadow-md max-w-4xl xl:ml-44 relative z-50">
+      <div className="cursor-grab bg-white/40 backdrop-blur-sm mx-20 w-[85vw] p-5 py-20 xl:p-8 rounded-lg shadow-md max-w-4xl xl:ml-44 relative z-50">
         {/* Title and Description with animation */}
         <div
           className={`transition-all duration-300 transform ${
@@ -59,14 +66,16 @@ const LandingCardsSlider = () => {
               : "opacity-100 translate-y-0"
           }`}
         >
-          <h2 className="text-6xl font-bold mb-4">
+          <h2 className="text-6xl font-bold mb-6">
             {landingCards[currentSlide].title}
           </h2>
-          <p className="mb-4">{landingCards[currentSlide].description}</p>
+          <p className="mb-6 text-xl">
+            {landingCards[currentSlide].description}
+          </p>
         </div>
         <Link
           href={`/services/${landingCards[currentSlide].slug}`}
-          className="btn btn-secondary rounded-none z-50 relative"
+          className="btn btn-secondary rounded-none z-50 relative text-lg transition duration-200 ease-in-out hover:bg-gray-100 hover:text-black"
         >
           Learn More
         </Link>

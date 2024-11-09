@@ -11,7 +11,7 @@ const FloatingSocials = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="bg-transparent p-2 rounded-full border-2 border-gray-800 text-gray-800 hover:bg-black hover:text-white transition duration-300">
+        <div className="bg-transparent p-2 rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition duration-300">
           <FaFacebookF size={24} />
         </div>
       </Link>
@@ -22,7 +22,7 @@ const FloatingSocials = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="bg-transparent p-2 rounded-full border-2 border-gray-800 text-gray-800 hover:bg-black hover:text-white transition duration-300">
+        <div className="bg-transparent p-2 rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition duration-300">
           <FaWhatsapp size={24} />
         </div>
       </Link>
@@ -33,7 +33,7 @@ const FloatingSocials = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="bg-transparent p-2 rounded-full border-2 border-gray-800 text-gray-800 hover:bg-black hover:text-white transition duration-300">
+        <div className="bg-transparent p-2 rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition duration-300">
           <FaInstagram size={24} />
         </div>
       </Link>
