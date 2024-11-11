@@ -1,0 +1,32 @@
+[
+  {
+    "name": "contact",
+    "svg-path": "",
+    "text": "Contact our medical consultant and let them guide you through the whole process."
+  },
+  {
+    "name": "decide",
+    "svg-path": "",
+    "text": "Decide your medical tour plan mutually with our consultant."
+  },
+  {
+    "name": "ticket",
+    "svg-path": "",
+    "text": "Get your tickets booked and fix the date for the procedure."
+  },
+  {
+    "name": "appointment",
+    "svg-path": "",
+    "text": "Leave it all to us. Sit back, relax, and wait for your appointment."
+  },
+  {
+    "name": "pickup",
+    "svg-path": "",
+    "text": "We'll pick you up from your arrival location and escort you back and forth between the hotel and the clinic."
+  },
+  {
+    "name": "result",
+    "svg-path": "",
+    "text": "We'll follow up with you until you see the result and you're fully recovered."
+  }
+]

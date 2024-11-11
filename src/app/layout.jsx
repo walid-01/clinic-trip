@@ -5,6 +5,7 @@ import FloatingWhatsapp from "@/components/FWhatsapp";
 import ContactForm from "@/components/ContactForm";
 import ScrollToTop from "@/components/ScrollToTop";
 import ContactNavbar from "@/components/ContactNavbar";
+import FloatingSocials from "@/components/FloatingSocials";
 
 export const metadata = {
   title: "Clinic Trip",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         {/* <ContactForm /> */}
         <Footer />
         <ScrollToTop />
+        <FloatingSocials />
       </body>
     </html>
   );

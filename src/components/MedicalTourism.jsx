@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const MedicalTourismSection = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center gap-14 py-16 px-4 h-[90vh]">
+    <section className="lg:flex lg:flex-row items-center justify-center lg:gap-4 xl:gap-14 py-16 px-4 lg:h-[90vh]">
       {/* Left Side - Image */}
-      <div className="w-full md:w-2/5">
+      <div className="w-full lg:w-1/2 xl:w-2/5">
         <img
           src="/assets/medical_tourism.webp" // replace with your image path
           alt="Beautiful view of Turkey"
@@ -13,8 +13,8 @@ const MedicalTourismSection = () => {
       </div>
 
       {/* Right Side - Text Content */}
-      <div className="w-full md:w-2/5 mt-8 md:mt-0 text-center md:text-left p-4">
-        <h2 className="text-[38px] font-bold mt-8 mb-8">
+      <div className="w-full lg:w-2/5 text-center lg:text-left p-4">
+        <h2 className="text-[38px] font-bold pt-8 pb-8">
           Discover Medical Tourism in Turkey
         </h2>
         <p className="text-gray-700 text-lg leading-6">

@@ -1,5 +1,5 @@
 import FAQ from "@/components/FAQ";
-import FloatingSocials from "@/components/FloatingSocials";
+// import FloatingSocials from "@/components/FloatingSocials";
 import LandingCardsSlider from "@/components/LandingCardsSlider";
 import MedicalTourism from "@/components/MedicalTourism";
 import OurTreatments from "@/components/OurTreatments";
@@ -23,7 +23,7 @@ export default function Home() {
       <OurTreatments />
       <MedicalTourism />
       <FAQ />
-      <FloatingSocials />
+      {/* <FloatingSocials /> */}
     </div>
   );
 }

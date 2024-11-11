@@ -37,7 +37,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <div className="py-14 bg-gray-100">
+    <div className="py-14 bg-gray-100" id="faq">
       <h2 className="text-3xl font-bold text-center mb-14">
         Frequently Asked Questions
       </h2>

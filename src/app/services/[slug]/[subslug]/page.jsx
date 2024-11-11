@@ -4,6 +4,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 import ContactFormSide from "@/components/ContactFormSide";
 import ServiceFAQ from "@/components/ServiceFAQ";
+import Stages from "@/components/Stages";
+import BeforeAfter from "@/components/BeforeAfter";
 
 const Service = async ({ params }) => {
   const client = createClient({
@@ -44,6 +46,16 @@ const Service = async ({ params }) => {
     })
   );
 
+  // Fetch before-after images
+  const beforeAfterReferences =
+    service.fields.category.fields.beforeAfter || [];
+  const beforeAfterImages = await Promise.all(
+    beforeAfterReferences.map(async (imageRef) => {
+      const imageEntry = await client.getAsset(imageRef.sys.id);
+      return imageEntry.fields.file.url;
+    })
+  );
+
   const options = {
     renderNode: {
       [BLOCKS.HEADING_2]: (node, children) => (
@@ -53,7 +65,7 @@ const Service = async ({ params }) => {
         <h3 className="text-xl font-medium my-3">{children}</h3>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="text-gray-700 my-2">{children}</p>
+        <p className="text-gray-900 my-4 text-lg">{children}</p>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="ml-6">{children}</ul>
@@ -78,27 +90,34 @@ const Service = async ({ params }) => {
           alt={service.fields.name}
           width={800}
           height={400}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover brightness-90"
         />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-6xl font-bold text-white p-2">
+            {service.fields.name}
+          </h1>
+        </div>
       </div>
-      <div className="p-10 w-full lg:flex lg:justify-center lg:gap-40">
-        <div className="mt-6 w-2/5">
-          <h1 className="text-3xl font-bold">{service.fields.name}</h1>
+      <div className="py-10 px-10 sm:px-20 w-full lg:flex lg:justify-center lg:gap-10 xl:gap-40">
+        <div className="mt-6 lg:w-1/2 xl:w-2/5">
+          <h2 className="text-4xl font-semibold mb-6">
+            {service.fields.description}
+          </h2>
           <div className="text-gray-700 mt-4">
             {service.fields.content
               ? documentToReactComponents(service.fields.content, options)
               : ""}
           </div>
         </div>
-        <div className="w-1/4">
+        <div className="sm:w-2/3 mx-auto lg:mx-0 lg:w-1/3 xl:w-1/4">
           <ContactFormSide />
         </div>
       </div>
 
-      {/* Pass the fully fetched FAQ data to the FAQ component */}
-      <div className="mt-10">
-        <ServiceFAQ faqs={faqs} />
-      </div>
+      <Stages serviceGroup={service.fields.name} />
+      <BeforeAfter images={beforeAfterImages} />
+
+      <ServiceFAQ faqs={faqs} />
     </div>
   );
 };
