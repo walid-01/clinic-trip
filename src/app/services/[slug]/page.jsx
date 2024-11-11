@@ -28,7 +28,7 @@ const ServiceGroup = async ({ params }) => {
 
   return (
     <div>
-      <div className="relative w-full h-[400px]">
+      {/* <div className="relative w-full h-[400px]">
         <div
           className="bg-cover bg-center h-full w-full"
           style={{
@@ -40,20 +40,35 @@ const ServiceGroup = async ({ params }) => {
           <h1 className="text-xl font-bold">{serviceGroup.fields.groupName}</h1>
           <p className="text-center">{serviceGroup.fields.description}</p>
         </div>
+      </div> */}
+      <div className="relative">
+        <img
+          className="object-cover w-full h-[80vh] brightness-[80%]"
+          src={serviceGroup.fields.coverImage?.fields.file.url}
+          alt={serviceGroup.fields.groupName}
+        />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          <h1 className="text-7xl text-white font-bold">
+            {serviceGroup.fields.groupName}
+          </h1>
+          <h1 className="text-3xl text-white">
+            {serviceGroup.fields.description}
+          </h1>
+        </div>
       </div>
 
-      <div>
-        <h1 className="text-center text-3xl font-bold mt-8">
+      <div className="py-14 px-14">
+        <h1 className="text-center text-3xl font-bold mb-14">
           Our {serviceGroup.fields.groupName} Services
         </h1>
-        <div className="px-10 py-6 grid grid-cols-1 lg:grid-cols-2 gap-6 xl:w-2/3 xl:mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:w-3/5 xl:mx-auto">
           {services.map((service) => (
             <div
               key={service.sys.id}
-              className="border rounded-lg overflow-hidden shadow-lg transition-transform transform hover:-translate-y-2"
+              className="relative border shadow-lg transition-transform transform hover:-translate-y-2"
             >
               <Link
-                className="h-full w-full flex"
+                className="h-full w-full"
                 href={`/services/${serviceGroup.fields.slug}/${service.fields.slug}`}
               >
                 <Image
@@ -62,17 +77,18 @@ const ServiceGroup = async ({ params }) => {
                     "/assets/default_service_thumbnail.webp"
                   } // Use a default image if unavailable
                   alt={service.fields.name}
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover"
+                  width={350}
+                  height={600}
+                  className="w-full h-[400px] object-cover brightness-90"
                 />
 
-                <div className="bottom-0 left-0 w-full bg-white bg-opacity-50 p-4">
-                  <h2 className="text-lg font-bold">{service.fields.name}</h2>
-                  <p className="text-sm text-gray-600">
-                    {service.fields?.description ||
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum distinctio nesciunt error corrupti harum nulla ducimus iusto provident a perspiciatis?"}
+                <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-end  p-4">
+                  <p className="text-sm text-gray-800 tracking-wide bg-gray-200 px-2 rounded-full w-fit mb-1">
+                    {serviceGroup.fields.groupName}
                   </p>
+                  <h2 className="text-2xl font-semibold ">
+                    {service.fields.name}
+                  </h2>
                 </div>
               </Link>
             </div>

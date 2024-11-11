@@ -7,8 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // fontFamily: {
+      //   catcheye: ["CatchEye", "sans-serif"],
+      // },
       fontFamily: {
-        catcheye: ["CatchEye", "sans-serif"],
+        sans: ['"Nunito Sans"', "sans-serif"], // Main body font
+        // sans: ['"Mulish"', "sans-serif"], // Main body font
+        serif: ['"Lora"', "serif"], // Headings font
       },
       colors: {
         background: "var(--background)",
