@@ -88,6 +88,7 @@ const Navbar = () => {
                         href={`/services/${selectedGroup.fields.slug}/${
                           service.fields?.slug || "#"
                         }`}
+                        key={service.sys.id}
                         className="text-gray-700 flex items-center text-wrap px-4 h-full hover:bg-gray-50 border-b border-transparent hover:border-b hover:border-black"
                       >
                         {service.fields?.name || "Unnamed Service"}
@@ -218,6 +219,9 @@ const Navbar = () => {
           <button type="button" className="btn btn-secondary rounded-none mb-4">
             Free Consultation
           </button>
+          <li className="cursor-pointer mb-2 font-bold">
+            <Link href="/">Home</Link>
+          </li>
           {serviceGroups.map((group) => (
             <li key={group.sys.id} className="mb-2">
               <details className="group">
@@ -239,6 +243,15 @@ const Navbar = () => {
               </details>
             </li>
           ))}
+          <li className="cursor-pointer mb-2 font-bold">
+            <Link href="/#faq">FAQs</Link>
+          </li>
+          <li className="cursor-pointer mb-2 font-bold">
+            <Link href="/about-us">About Us</Link>
+          </li>
+          <li className="cursor-pointer mb-2 font-bold">
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
       </div>
     </div>

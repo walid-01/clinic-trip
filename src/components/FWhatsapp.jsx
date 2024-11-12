@@ -8,7 +8,7 @@ const FWhatsapp = () => {
       <FloatingWhatsApp
         phoneNumber="213540075383"
         accountName="Clinic Trip"
-        // avatar="/assets/Logo_2.png"
+        avatar="/assets/Icon.png"
         statusMessage="Typically replies instantly"
         chatMessage="Hello, Welcome to CLINIC TRIP. Thank you for contacting us. How may we help you?"
         // placeholder="Type your message..."

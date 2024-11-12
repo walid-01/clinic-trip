@@ -458,8 +458,8 @@ const Stages = ({ serviceGroup }) => {
             </svg>
           </div>
           <p>
-            We'll pick you up from your arrival location and escort you back and
-            forth between the hotel and the clinic.
+            We&apos;ll pick you up from your arrival location and escort you
+            back and forth between the hotel and the clinic.
           </p>
         </div>
 
@@ -563,8 +563,8 @@ const Stages = ({ serviceGroup }) => {
             </svg>
           </div>
           <p>
-            We'll follow up with you until you see the result and you're fully
-            recovered.
+            We&apos;ll follow up with you until you see the result and
+            you&apos;re fully recovered.
           </p>
         </div>
       </div>

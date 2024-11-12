@@ -5,6 +5,12 @@ import MedicalTourism from "@/components/MedicalTourism";
 import OurTreatments from "@/components/OurTreatments";
 import WhyUs from "@/components/WhyUs";
 
+// export const metadata = {
+//   icons: {
+//     icon: "/assets/Icon.png",
+//   },
+// };
+
 export default function Home() {
   return (
     <div>
