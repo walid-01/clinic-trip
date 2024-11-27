@@ -19,6 +19,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        xs: "380px",
+        sm: "540px",
+        md: "720px",
+        lg: "920px",
+        xl: "1150px",
+      },
     },
   },
   daisyui: {

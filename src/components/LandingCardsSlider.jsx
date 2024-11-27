@@ -57,7 +57,7 @@ const LandingCardsSlider = () => {
       ></div> */}
 
       {/* Slide Content */}
-      <div className="cursor-grab bg-white/40 backdrop-blur-sm mx-20 w-[85vw] p-5 py-20 xl:p-8 rounded-lg shadow-md max-w-4xl xl:ml-44 relative z-50">
+      <div className="cursor-grab w-full rounded-none bg-white/40 backdrop-blur-sm sm:mx-20 sm:w-[85vw] px-8 py-20 xl:p-8 sm:rounded-lg shadow-md max-w-4xl xl:ml-44 relative z-50">
         {/* Title and Description with animation */}
         <div
           className={`transition-all duration-300 transform ${
@@ -66,7 +66,7 @@ const LandingCardsSlider = () => {
               : "opacity-100 translate-y-0"
           }`}
         >
-          <h2 className="text-6xl font-bold mb-6">
+          <h2 className="text-5xl xs:text-6xl font-bold mb-6">
             {landingCards[currentSlide].title}
           </h2>
           <p className="mb-6 text-xl">
@@ -82,14 +82,14 @@ const LandingCardsSlider = () => {
       </div>
 
       {/* Centered Navigation Buttons */}
-      <div className="absolute inset-y-0 left-4 right-4 flex justify-between items-center z-10">
+      <div className="absolute inset-y-0 left-4 right-4 justify-between items-center z-10 hidden sm:flex">
         <button
           onClick={() =>
             handleSlideChange(
               (currentSlide - 1 + landingCards.length) % landingCards.length
             )
           }
-          className="text-white bg-white p-2 lg:ml-16 rounded-full z-50"
+          className="text-white bg-white p-2 xl:ml-16 rounded-full z-50"
         >
           <svg
             width="24"
@@ -108,7 +108,7 @@ const LandingCardsSlider = () => {
           onClick={() =>
             handleSlideChange((currentSlide + 1) % landingCards.length)
           }
-          className="text-white bg-white p-2 lg:mr-16 rounded-full z-50"
+          className="text-white bg-white p-2 xl:mr-16 rounded-full z-50"
         >
           <svg
             width="24"

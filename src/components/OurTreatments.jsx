@@ -14,7 +14,7 @@ const OurTreatments = async () => {
   const serviceGroups = res.items;
   return (
     <div
-      className="py-5 px-10 md:px-5 bg-accent/5"
+      className="py-5 xs:px-10 md:px-5 bg-accent/5"
       // style={{
       //   background: "linear-gradient(to bottom right, #ede9fd, #f5f3ff)",
       // }}
@@ -25,7 +25,7 @@ const OurTreatments = async () => {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
         {serviceGroups.map((group) => (
           <div
-            className="relative flex flex-col group rounded-lg overflow-hidden"
+            className="relative flex flex-col group xs:rounded-lg overflow-hidden"
             key={group.sys.id}
           >
             <div className="relative h-0 pb-[70%] overflow-hidden">
@@ -36,11 +36,11 @@ const OurTreatments = async () => {
                 alt="service"
               />
             </div>
-            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-end bg-black/10 gap-4 p-4">
-              <h2 className="text-4xl font-semibold text-white">
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center xs:justify-end bg-black/10 gap-4 px-2 xs:p-4">
+              <h2 className="text-3xl xs:text-4xl font-semibold text-white">
                 {group.fields.groupName}
               </h2>
-              <p className="text-gray-50 w-2/3 text-center">
+              <p className="text-gray-50 xs:w-2/3 text-center">
                 {group.fields.description}
               </p>
               <div className="flex gap-4 flex-row">
@@ -52,7 +52,7 @@ const OurTreatments = async () => {
                 </Link>
                 <Link
                   href="/consultation"
-                  className="btn bg-transparent text-white hover:bg-black rounded-none text-lg border-2"
+                  className="hidden xs:flex btn bg-transparent text-white hover:bg-black rounded-none text-lg border-2"
                 >
                   Consultation
                 </Link>

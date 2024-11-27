@@ -4,7 +4,7 @@ import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa"; // Import
 
 const FloatingSocials = () => {
   return (
-    <div className="hidden lg:fixed top-1/2 left-6 transform -translate-y-1/2 lg:flex lg:flex-col space-y-4 z-50">
+    <div className="hidden xl:fixed top-1/2 left-6 transform -translate-y-1/2 xl:flex xl:flex-col space-y-4 z-50">
       {/* Facebook Icon */}
       <Link
         href="https://facebook.com"

@@ -39,14 +39,14 @@ const Navbar = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-gray-50 px-20 py-4">
+        <div className="navbar bg-gray-50 px-4 sm:px-20 py-4">
           <div className="navbar-start">
             <Link href="/" className="w-44 p-2 lg:w-64">
               <Image priority src={logoIcon} alt="logo" />
             </Link>
           </div>
 
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden xl:flex">
             <ul className="flex items-center gap-8 px-1">
               <li>
                 <Link href={"/"} className="relative group font-semibold ">
@@ -57,7 +57,7 @@ const Navbar = () => {
               {/* Treatments dropdown */}
               <li className="relative group">
                 <div className="cursor-pointer py-4 flex items-center font-semibold ">
-                  OPERATIONS
+                  TREATMENTS
                 </div>
                 <ul className="absolute left-0 p-0 top-full hidden group-hover:flex active:bg-white focus:bg-white bg-white hover:bg-white shadow-lg z-50 w-auto max-h-[300px] h-[300px] hover:cursor-default">
                   {/* Categories list on the left */}
@@ -147,7 +147,7 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-end">
-            <div className="flex-none lg:hidden">
+            <div className="flex-none xl:hidden">
               <label
                 htmlFor="my-drawer-3"
                 aria-label="open sidebar"
@@ -169,7 +169,7 @@ const Navbar = () => {
               </label>
             </div>
 
-            <div className="flex-none hidden lg:block">
+            <div className="flex-none hidden xl:block">
               <button
                 type="button"
                 className="btn btn-secondary rounded-none mr-3"

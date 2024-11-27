@@ -8,16 +8,16 @@ export const metadata = {
 const Contact = () => {
   return (
     <div>
-      <div className="flex items-center justify-center h-[90vh] w-full bg-gray-50">
-        <div className="w-2/5 px-20">
+      <div className="flex flex-col lg:flex-row items-center justify-center h-[84vh] w-full bg-gray-50">
+        <div className="lg:w-1/2 xl:w-2/5 pt-14 lg:pt-0 px-20">
           <h1 className="text-sm tracking-widest mb-2">CONTACT US</h1>
-          <h1 className="text-6xl font-bold">Have a question?</h1>
-          <h1 className="text-6xl font-bold mb-4">Get in touch!</h1>
-          <p className="text-xl mb-4">
+          <h1 className="text-4xl xl:text-6xl font-bold">Have a question?</h1>
+          <h1 className="text-4xl xl:text-6xl font-bold mb-4">Get in touch!</h1>
+          <p className="text-xl mb-4 max-w-md lg:max-w-none">
             Don&apos;t hesitate to reach us and our medical consultants will
             contact you as soon as possible
           </p>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center pb-4">
             <div className="flex h-6 w-full items-center gap-2">
               <svg width="24px" height="100%" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -123,8 +123,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 h-full flex flex-col items-center justify-center w-1/3 px-10">
-          <h1 className="text-2xl mb-4 w-full">Get In Touch</h1>
+        <div className="sticky top-0 h-full flex flex-col items-center justify-center lg:w-1/3 px-10">
+          <h1 className="hidden lg:block text-2xl mb-4 w-full">Get In Touch</h1>
           <form className="relative z-10 card w-full px-6 pb-8 pt-6 bg-white rounded-none gap-3">
             <input
               className="input w-full rounded-none focus:outline-none focus:ring-0 focus:border-transparent border-transparent border-b-gray-300 focus:border-b-black focus:shadow-sm"

@@ -52,7 +52,7 @@ const BeforeAfter = ({ images }) => {
   };
 
   return (
-    <div className="py-20 px-28">
+    <div className="py-20 px-10 xs:px-28">
       <h1 className="text-center text-3xl font-bold mb-20">Before & After</h1>
 
       {/* Slider Component */}
@@ -77,7 +77,7 @@ const BeforeAfter = ({ images }) => {
 
         {/* Custom Navigation Buttons */}
         <button
-          className="absolute top-1/2 -left-10 left-0 md:left-6 transform -translate-y-1/2 bg-transparent rounded-full border-2 border-black/60 text-black/60 hover:bg-black hover:text-white transition duration-300 font-extrabold text-lg w-10 h-10"
+          className="absolute top-1/2 -left-10 md:left-6 transform -translate-y-1/2 bg-transparent rounded-full border-2 border-black/60 text-black/60 hover:bg-black hover:text-white transition duration-300 font-extrabold text-lg w-10 h-10"
           onClick={() => sliderRef.current.slickPrev()} // Go to previous slide
         >
           &#60;

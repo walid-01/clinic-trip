@@ -37,7 +37,7 @@ const ServiceFAQ = ({ faqs }) => {
           >
             {faqs.map((faq, index) => (
               <SwiperSlide key={index} className="flex flex-col mb-4">
-                <div className="flex flex-col items-center justify-center bg-white border shadow-md border-gray-300 rounded-lg p-6 md:px-10 md:py-10 text-center h-[400px] sm:h-[350px] md:h-[390px] lg:h-[450px] xl:h-[350px]">
+                <div className="flex flex-col items-center justify-center bg-white border shadow-md border-gray-300 rounded-lg p-6 md:px-10 md:py-10 text-center xs:h-[400px] sm:h-[350px] md:h-[390px] lg:h-[450px] xl:h-[350px]">
                   <h3 className="text-xl font-semibold mb-6">{faq.question}</h3>
                   <p className="text-gray-700 flex-grow">{faq.answer}</p>
                 </div>

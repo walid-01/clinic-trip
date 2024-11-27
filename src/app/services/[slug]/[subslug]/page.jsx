@@ -120,8 +120,8 @@ const Service = async ({ params }) => {
         </div>
       </div>
 
-      <div className="py-10 px-10 sm:px-20 lg:px-10 w-full lg:flex lg:justify-center lg:gap-16 xl:gap-30 2xl:gap-40">
-        <div className="mt-6 lg:w-1/2 xl:w-2/5">
+      <div className="lg:py-10 w-full lg:flex lg:justify-center lg:gap-16 xl:gap-30 2xl:gap-40">
+        <div className="px-10 sm:px-20 lg:px-10 mt-6 lg:w-1/2 xl:w-2/5">
           <h2 className="text-4xl font-semibold mb-6">
             {service.fields.description}
           </h2>
@@ -131,7 +131,7 @@ const Service = async ({ params }) => {
               : ""}
           </div>
         </div>
-        <div className="sm:w-2/3 mx-auto md:w-2/5 lg:mx-0 lg:w-1/3 2xl:w-1/4">
+        <div className="w-full mx-auto md:w-3/5 lg:mx-0 lg:w-1/3 2xl:w-1/4">
           <ContactFormSide />
         </div>
       </div>
