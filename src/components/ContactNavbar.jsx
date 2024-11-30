@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const ContactNavbar = () => {
   return (
-    <div className="bg-gray-50 border-b py-3 flex items-center justify-center gap-8">
+    <div className="bg-gray-50 border-b py-2 flex items-center justify-center gap-8">
       <Link href="" className="flex items-center">
-        <div className="w-6">
+        <div className="w-5">
           <svg
             viewBox="0 0 24 24"
             fill="none"

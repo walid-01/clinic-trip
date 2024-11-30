@@ -41,7 +41,7 @@ const LandingCardsSlider = () => {
   return (
     <div
       {...swipeHandlers}
-      className="flex justify-center xl:justify-normal items-center h-[89vh] relative z-0"
+      className="flex justify-center xl:justify-normal items-center h-[85vh] relative z-0"
     >
       <img
         src="/assets/Clinic.jpg"

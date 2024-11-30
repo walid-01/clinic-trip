@@ -56,10 +56,10 @@ const Navbar = () => {
               </li>
               {/* Treatments dropdown */}
               <li className="relative group">
-                <div className="cursor-pointer py-4 flex items-center font-semibold ">
+                <div className="cursor-pointer py-4 flex items-center font-semibold">
                   TREATMENTS
                 </div>
-                <ul className="absolute left-0 p-0 top-full hidden group-hover:flex active:bg-white focus:bg-white bg-white hover:bg-white shadow-lg z-50 w-auto max-h-[300px] h-[300px] hover:cursor-default">
+                <ul className="absolute left-0 p-0 top-full hidden group-hover:flex active:bg-white focus:bg-white bg-white hover:bg-white shadow-lg z-50 w-auto max-h-[400px] h-[400px] hover:cursor-default">
                   {/* Categories list on the left */}
                   <div className="w-56 h-full flex flex-col gap-[1px]">
                     {serviceGroups.map((group) => (
@@ -122,6 +122,15 @@ const Navbar = () => {
               <li>
                 <Link href={"/#faq"} className="relative group font-semibold ">
                   FAQs
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/gallery"}
+                  className="relative group font-semibold "
+                >
+                  Gallery
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                 </Link>
               </li>
@@ -245,6 +254,9 @@ const Navbar = () => {
           ))}
           <li className="cursor-pointer mb-2 font-bold">
             <Link href="/#faq">FAQs</Link>
+          </li>
+          <li className="cursor-pointer mb-2 font-bold">
+            <Link href="/gallery">Gallery</Link>
           </li>
           <li className="cursor-pointer mb-2 font-bold">
             <Link href="/about-us">About Us</Link>
